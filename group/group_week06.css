@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 62.5%;
+}
+
+ul {
+  padding-left: 0;
+}
+
+/**************************************/
+
+.blue_rounded {
+  border: 2px solid #26607F;
+  border-radius: 0.5rem;
+  background-color: #0076b6;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.white_rounded {
+  border: 2px solid #26607F;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 1rem;
+  width: 100%;
+}
+
+/**************************************/
+
+#flex_first {
+  width: 80vw;
+  height: 20vh;
+  min-height: 15rem;
+}
+
+.center_list {
+  width: auto;
+  list-style-position: inside;
+}
+
+/**************************************/
+
+#flex_second_wrapper {
+  list-style-type: none;
+}
+
+.form-row, .form-row>* {
+  padding: 0.5rem;
+}
+
+.form-row>fieldset {
+  background-color: #fff;
+}
+
+.form-row>button {
+  width: auto;
+  margin: 0.5rem;
+}
+
+/**************************************/
+
+.placeholder_image {
+  background-color: #26607F;
+  height: 10rem;
+}
+
+/**************************************/
+
+.flex_div {
+  color: #fff;
+}
+
+#flex_first {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem auto;
+}
+
+.center_list {
+  width: auto;
+  list-style-position: inside;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-around;
+  width: 90%;
+}
+
+#flex_second li, .form-row>fieldset {
+  display: flex;
+  flex-direction: column;
+}
+
+#grid_first {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: auto auto auto auto;
+}
+
+#grid_second {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: auto auto auto;
+}
+
+#grid_second div {
+  min-height: 100px;
+}
+
+.box9 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1000px) {
+  #grid_first {
+    grid-template-columns: auto auto;
+  }
+  #grid_second {
+    grid-template-columns: auto auto;
+  }
+  .box9 {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #grid_first {
+    grid-template-columns: auto;
+  }
+  #grid_second {
+    grid-template-columns: auto;
+  }
+  .box9 {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

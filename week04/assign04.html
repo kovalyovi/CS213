@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../lib/jquery-3.4.1.min.js"></script>
+  <link href="./assign04.css" rel="stylesheet">
+  <link href="./assign04-common.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Ubuntu:400i&display=swap" rel="stylesheet">
+  <style>
+    .full-image img {
+      width: 100%;
+    }
+
+    #page-navigation {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      top: 10px;
+      left: 15px;
+
+    }
+
+    #page-navigation a {
+      color: rgb(168, 168, 168);
+      font-size: 600%;
+      text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.733), 1px -1px 0 rgba(0, 0, 0, 0.555), -1px 1px 0 rgba(0, 0, 0, 0.205), 1px 1px 0 rgba(0, 0, 0, 0.212);
+      text-decoration: none;
+      border-bottom: 13px solid transparent;
+      transition: all .17s ease-out;
+    }
+
+    #page-navigation a:hover {
+      cursor: pointer;
+      color: rgb(255, 255, 255);
+      border-bottom: 13px solid white;
+      box-shadow: 0px 31px 15px -21px black;
+    }
+
+    h3 {
+      margin-bottom: 5px;
+    }
+
+    .main div {
+      padding-left: 15px;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .requirements {
+      width: 100%;
+      display: flex;
+    }
+
+    .requirements div {
+      width: 50%;
+    }
+
+    /* It's taken from w3schools */
+    #pricing {
+      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #pricing td,
+    #pricing th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #pricing tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    #pricing tr:hover {
+      background-color: #ddd;
+    }
+
+    #pricing th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: rgb(76, 130, 175);
+      color: white;
+    }
+
+    /* end quotation */
+
+    .requirements h5 {
+      margin-bottom: 5px;
+      margin-top: 0;
+    }
+
+    .schedule {
+      color: brown;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav id="navbar">
+      <ul>
+        <li><a href="/~ilyakov/">Index</a></li>
+        <li><a href="./assign04.html">Home Page</a></li>
+        <li><a href="./assign04_2.html">Contact us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main>
+    <div class="full-image">
+      <img src="../images/carting.jpg" alt="carting">
+    </div>
+    <div id="page-navigation">
+      <h5></h5>
+      <a href="#introduction">Introduction</a>
+      <a href="#pricing">Pricing</a>
+    </div>
+    <div id="main-container">
+      <section class="header">
+        <h1 id="introduction">Welcome to <span class="green">Minsk</span> carting!</h1>
+      </section>
+      <section class="requirements">
+        <div>
+          <ul>
+            <li>- For you two floors of the track with steep descents and ascents;</li>
+            <li>- Cards equipped with Honda engines;</li>
+            <li>- Karting for children;</li>
+            <li>- Professional telemetry (printout at the end of each race);</li>
+            <li>- Free helmets, gloves and suits;</li>
+            <li>- A huge audience area on two floors.</li>
+            <li>- All the same friendly and responsible staff;</li>
+          </ul>
+        </div>
+        <div>
+          <h5>
+            Karting in <span class="green">Minsk</span> is open daily:
+          </h5>
+          <div class="schedule">
+            Mon-Fri from 13:00 to 22:00<br>
+            Sat-Sun + holidays from 11:00 to 22:00
+          </div>
+           <div class="link">
+            <a href="https://www.google.com/search?rlz=1C1GCEU_en&sxsrf=ACYBGNRPQf1np9nT8Q-iUp4-AOIC-Txmdg:1580280405611&q=%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%B3+%D0%BC%D0%B8%D0%BD%D1%81%D0%BA&npsic=0&rflfq=1&rlha=0&rllag=53922566,27597776,5161&tbm=lcl&ved=2ahUKEwix9eKhm6jnAhVnHjQIHYMIAHcQtgN6BAgLEAQ&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:1&rldoc=1">Location</a>
+           </div>
+        </div>
+      </section>
+      <hr>
+      <sections class="main">
+        <h3>The only two-level kart in <span class="green">Minsk</span></h3>
+        <div>
+          <span>
+            For residents and visitors of the city!<br>
+            Give your dear and beloved, close and very close people rare emotions and pleasant impressions:<br>
+            Gift certificates for karting!<br>
+            Karting in <span class="green">Minsk</span> at the Kartland cartodrome is a great way to arrange friendly tournaments, spend an unusual
+            romantic evening, introduce children to motorsport and, most importantly, get unforgettable pleasant
+            impressions and severity of feelings. We promise you will like it!
+          </span>
+        </div>
+      </sections>
+      <hr>
+      <section class="pricing">
+        <h3 id="pricing">Pricing</h3>
+        <div>
+          <table id="pricing">
+            <tr>
+              <th>Group</th>
+              <th>Time</th>
+              <th>Price</th>
+            </tr>
+            <tr>
+              <td>Adults</td>
+              <td>10 minutes</td>
+              <td>$14</td>
+            </tr>
+            <tr>
+              <td>Kids below 13</td>
+              <td>10 minutes</td>
+              <td>$12</td>
+            </tr>
+            <tr>
+              <td>Ladies (not weekends)</td>
+              <td>10 minutes</td>
+              <td>$10</td>
+            </tr>
+            <tr>
+              <td>Your B-Day?</td>
+              <td>10 minutes</td>
+              <td>$10</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+
+  <footer>
+    <div class="description">
+      <span>All rights reserved, ILYA ©Copyright</span>
+    </div>
+  </footer>
+</body>
+
+</html>

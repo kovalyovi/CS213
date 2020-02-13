@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 5</title>
+  <link href="../lib/header.css" rel="stylesheet">
+  <link href="./assign05.css" rel="stylesheet">
+  <script src="../lib/jquery-3.4.1.min.js"></script>
+  <script src="./assign05.js"></script>
+  <script>
+    $(function () {
+      $("#header").load("../lib/header.html");
+    });
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    html,
+    body,
+    nav,
+    ul {
+      margin: 0;
+    }
+
+    main {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    main>div {
+      padding: 15px;
+      width: 100%;
+    }
+
+    header {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div id="header"></div>
+  </header>
+
+  <main>
+    <div id="scroll-up">
+      <a href="#header"></a>
+    </div>
+
+    <div class="full-size">
+      <img src="../images/zoo.jpg" alt="Minsk zoo">
+    </div>
+
+    <div id="main-content">
+      <section class="intro">
+        <h1>Welcome to our Minsk Zoo website!</h1>
+        <p>Minsk Zoo is a unique museum of wildlife. It was opened on August 9, 1984. The collection of animals includes
+          more than 400 species of exotic animals and rare representatives of the fauna of Belarus. Waterfowl live all
+          year round in the natural Svisloch backwaters; domestic lambs and goats, which can be stroked, walk on the
+          Vyaskovaya Syadziba contact area. Permanent exhibitions are open, attractions, cafes, horse riding or ponies
+          work. A visit to the zoo is a wonderful vacation and communication with nature.</p>
+      </section>
+
+      <hr class="big">
+
+      <section class="zubr">
+        <h2>European Bizon (Zubr)</h2>
+        <div class="content-holder">
+          <div class="image-holder">
+            <img src="../images/zubr.jpg" alt="zubr">
+          </div>
+          <div class="text-holder">
+            <p>
+              Zubrs (bisons) are one of the major things you would enjoy
+              at the Minsk Zoo! You can feed them, pet them and take
+              wonderful selfies in front of them!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <hr>
+
+      <section class="terrarrium">
+        <h2>Terrarrium</h2>
+        <div class="content-holder">
+          <div class="image-holder">
+            <img src="../images/snake.JPG" alt="snake">
+          </div>
+          <div class="text-holder">
+            <p>
+              More than 70 species of reptiles (snakes, lizards, aquatic and land turtles, crocodiles), amphibians,
+              insects and arachnids. You can see Indian and black-necked spitting cobra, the largest snake in the CIS -
+              a net python named Cleopatra, milk snakes, a decorated slingshot, a chameleon, huge cockroaches,
+              tarantulas.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <hr>
+
+      <section class="african">
+        <h2>African Animals</h2>
+        <div class="content-holder">
+          <div class="image-holder">
+            <img src="../images/lion.jpg" alt="lion">
+          </div>
+          <div class="text-holder">
+            <p>
+              White tiger, giraffe, lions and more african animals you can see at our Zoo! Definitely, you won't be able
+              to play with them but there are shows wher we show how to feed them.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <hr>
+
+      <section class="environmental">
+        <h2>Activities</h2>
+        <div class="content-holder">
+          <div class="image-holder">
+            <img src="../images/camel.jpg" alt="camel">
+          </div>
+          <div class="text-holder">
+            <h5>The environmental activities of the Minsk Zoo include:</h5>
+            <ul>
+              <li>- conservation and breeding of wild animals in the zoo;</li>
+              <li>-conducting observations to identify favorable conditions for the life of animals;</li>
+              <li>-creation for animals of the zoo of an optimal habitat, taking into account the concept of enrichment
+                of living conditions;</li>
+              <li>-enlightenment of the population in environmental issues;</li>
+              <li>- informing the public about the environmental problems and environmental activities of the zoo;</li>
+              <li>-cooperation with environmental organizations, environmental centers, educational institutions, youth
+                groups;</li>
+              <li>-ecological, aesthetic and spiritual education of the younger generation.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <hr>
+
+      <section class="kid">
+        <h2>Interactive</h2>
+        <div class="content-holder">
+          <div class="image-holder">
+            <img src="../images/kid.png" alt="kid with a pig">
+          </div>
+          <div class="text-holder">
+            <p>
+              There is an amazing opportunity for your children to communicate and spend their time with different
+              animals. It's completely safe and very intertaining for children of any age. In fact, there is a weekly
+              horse riding activity you can sigh up.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+  </main>
+
+  <footer>
+    <div id="footer">
+      <div class="copyright">
+        <span>
+          Copyright © 2020 Rexburg USA, ILYA at BYU-Idaho. All rights reserved.
+        </span>
+      </div>
+      <div class="byui-link">
+        <a href="http://www.byui.edu/" target="_blank">BYUI Homepage</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../lib/jquery-3.4.1.min.js"></script>
+  <link href="./assign04_2.css" rel="stylesheet">
+  <link href="./assign04-common.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Ubuntu:400i&display=swap" rel="stylesheet">
+  <style>
+    h1 {
+      text-align: center;
+    }
+
+    .contact-form {
+      width: 800px;
+      margin: 0 auto;
+    }
+
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 40px;
+      border: 1px solid #890d0db0;
+      border-radius: 4px;
+      background-color: #f8ef984a;
+    }
+
+    .contact-form form>div {
+      display: flex;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 48%;
+      margin-right: 15px;
+      padding: 5px 15px;
+      border: 1px solid rgba(2, 123, 179, 0.397);
+      border-radius: 4px;
+    }
+
+    textarea {
+      height: 120px;
+    }
+
+    .contact-form form div.buttons {
+      display: flex;
+      flex-direction: row;
+      width: 48%;
+      justify-content: center;
+    }
+
+    button {
+      margin: 0 10px;
+      border-radius: 12px;
+      color: white;
+      border: 2px solid rgb(13, 143, 56);
+      background: rgb(13, 143, 56);
+      padding: 5px 14px;
+      font-size: 120%;
+      transition: all .17s ease-out;
+    }
+
+    button:last-child {
+      border: 2px solid rgb(167, 96, 16);
+      background: rgb(167, 96, 16);
+    }
+
+    button:hover {
+      cursor: pointer;
+      background-color: white;
+      color: rgb(13, 143, 56);
+    }
+
+    button:last-child:hover {
+      color: rgb(167, 96, 16);
+    }
+
+    .image-holder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav id="navbar">
+      <ul>
+        <li><a href="/~ilyakov/">Index</a></li>
+        <li><a href="./assign04.html">Home Page</a></li>
+        <li><a href="./assign04_2.html">Contact us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main>
+    <div id="main-container">
+      <section class="contact-form">
+        <h1>Leave your feedback</h1>
+        <form action="">
+          <div class="column">
+            <input type="text" id="first-name" name="firstname" placeholder="Name">
+            <input type="text" id="first-name" name="firstname" placeholder="Email">
+          </div>
+          <div>
+            <input type="text" id="first-name" name="firstname" placeholder="Phone Number">
+          </div>
+          <div>
+            <select>
+              <option value="default" disabled selected>---Choose Subject---</option>
+              <option value="quote">Request a quote</option>
+              <option value="bug">Website Bug</option>
+              <option value="content">Missing Content</option>
+              <option value="suggestion">Suggestion</option>
+              <option value="complaint">Complaint</option>
+            </select>
+          </div>
+          <div>
+            <textarea id="message" name="message" placeholder="Message"></textarea>
+          </div>
+          <div class="buttons">
+            <button type="submit">Send</button>
+            <button type="reset">Reset</button>
+          </div>
+        </form>
+      </section>
+      <div class="image-holder">
+        <img src="../images/smily.jpg" alt="smily-face">
+      </div>
+    </div>
+  </main>
+
+
+  <footer>
+    <div class="description">
+      <span>All rights reserved, ILYA ©Copyright</span>
+    </div>
+  </footer>
+</body>
+
+</html>

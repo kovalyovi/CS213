@@ -1,0 +1,120 @@
+/* Three font families */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;  
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bowlby One SC', cursive;
+}
+
+.description {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+/* Three fonts sizes */
+
+.large {
+  font-size: 1.2em;
+}
+
+.medium {
+  font-size: 1.0em;
+}
+
+.small {
+  font-size: 0.8em;
+}
+
+.green {
+  color: rgb(2, 107, 2);
+}
+
+footer {
+  height: 70px;
+  background: black;
+  color: rgb(175, 108, 8);
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+main {
+  min-height: calc(100vh - 42px - 70px - 21px);
+}
+
+/* Font colors */
+
+.attention {
+  color: red !important;
+}
+
+.warning {
+  color: orange !important;
+}
+
+/* Background colors */
+
+div.red {
+  background-color: red;
+}
+
+/* Common CSS */
+
+html, body, nav, ul {
+  margin: 0;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  list-style: none;
+  padding: 0px 8px;
+  width: 100vw;
+  justify-content: center;
+  background: #3978e8;
+  color: white;
+  margin: 0;
+  height: 42px;
+}
+
+nav>ul>li {
+  display: flex;
+  justify-content: center;
+}
+
+nav>ul>li:not(:last-child) {
+  margin-right: 5%;
+}
+
+nav>ul>li>a {
+  padding: 12px 51px;
+  transition: background-color .17s ease-out;
+  background: transparent;
+}
+
+nav>ul>li:hover {
+  cursor: pointer;
+  background: #8d1212;
+}
+
+#main-container {
+  max-width: 1200px;
+  margin: 15px auto;
+}
