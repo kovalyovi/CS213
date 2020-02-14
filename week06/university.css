@@ -101,11 +101,19 @@ main {
   padding: 0;
 }
 
+h2 {
+  font-family: 'Luckiest Guy', cursive;
+}
+
 #main-content {
   display: grid;
   grid-template-columns: 200px auto;
   grid-template-areas: 'news introduction';
   min-height: 100vh;
+}
+
+.introduction li {
+    font-family: 'Shojumaru', cursive;
 }
 
 .news {

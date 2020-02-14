@@ -2,7 +2,10 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-html, body, nav, ul {
+html,
+body,
+nav,
+ul {
   margin: 0;
 }
 
@@ -12,6 +15,10 @@ html, body, nav, ul {
 
 nav {
   position: relative;
+}
+
+#header-navbar {
+  font-family: 'Shojumaru', cursive;
 }
 
 nav a {
@@ -31,7 +38,7 @@ nav ul {
   text-decoration: none;
   list-style: none;
   padding: 0px 8px;
-  width: 100vw;
+  width: calc(100vw - 132px);
   justify-content: center;
   color: white;
   margin: 0;
@@ -46,20 +53,21 @@ nav ul {
   top: 4px;
 }
 
-nav>ul>li {
+nav > ul > li {
   display: flex;
   justify-content: center;
 }
 
-nav>ul>li>a, nav>ul>li.dropdown {
+nav > ul > li > a,
+nav > ul > li.dropdown {
   padding: 12px 51px;
-  transition: background-color .17s ease-out;
+  transition: background-color 0.17s ease-out;
   background: transparent;
 }
 
-nav>ul>li:hover {
+nav > ul > li:hover {
   cursor: pointer;
-  background: #492A34;
+  background: #492a34;
 }
 
 #header-navbar {
@@ -104,12 +112,12 @@ li.dropdown:after {
   position: absolute;
   top: 42px;
   left: 30px;
-  border: 2px solid #492A34;
+  border: 2px solid #492a34;
   border-radius: 0 0 6px 6px;
   border-top: none;
   visibility: hidden;
   opacity: 0;
-  transition: all .17s ease-out;
+  transition: all 0.17s ease-out;
 }
 
 li.dropdown:hover .dropdown-content {
@@ -125,10 +133,10 @@ li.dropdown:hover .dropdown-content {
   flex-direction: column;
   justify-content: center;
   text-decoration: none;
-  color: #492A34;
+  color: #492a34;
   font-weight: bold;
   background-color: white;
-  transition: background-color .17s ease-out;
+  transition: background-color 0.17s ease-out;
 }
 
 .dropdown-content a:last-child {
@@ -137,11 +145,12 @@ li.dropdown:hover .dropdown-content {
 
 .dropdown-content a:hover {
   color: white;
-  background-color: #492A34;
+  background-color: #492a34;
 }
 
 @media screen and (max-width: 850px) {
-  nav>ul>li>a, nav>ul>li.dropdown {
+  nav > ul > li > a,
+  nav > ul > li.dropdown {
     text-align: center;
   }
   li.dropdown:after {
@@ -153,10 +162,10 @@ li.dropdown:hover .dropdown-content {
   nav {
     font-size: 60%;
   }
-  nav>ul {
+  nav > ul {
     font-size: 122%;
   }
-  nav>ul {
+  nav > ul {
     flex-direction: column;
     width: 170px;
     top: 40px;
@@ -166,9 +175,10 @@ li.dropdown:hover .dropdown-content {
     background: white;
     position: absolute;
     border-radius: 0 0 8px 8px;
-    border: 2px solid
+    border: 2px solid;
   }
-  nav>ul>li>a, nav>ul>li.dropdown {
+  nav > ul > li > a,
+  nav > ul > li.dropdown {
     padding: 10px;
   }
   #menu-button {
@@ -187,12 +197,12 @@ li.dropdown:hover .dropdown-content {
   .dropdown-content {
     top: 0;
     left: -90px;
-    border: 2px solid #492A34;
+    border: 2px solid #492a34;
   }
   .dropdown-content a {
     padding-right: 20px;
   }
-  nav>ul>li:hover {
+  nav > ul > li:hover {
     cursor: pointer;
     background: #689689;
     color: white;

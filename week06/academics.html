@@ -10,6 +10,7 @@
   <meta name="author" content="Fake University">
   <link href="./header.css" rel="stylesheet">
   <link href="./university.css" rel="stylesheet">
+  <link href="./academics.css" rel="stylesheet">
   <script src="../lib/jquery-3.4.1.min.js"></script>
   <script src="./university.js"></script>
   <script>
@@ -25,15 +26,116 @@
   </header>
 
   <main>
+    <div class="full-size">
+      <img src="../images/10-castle.jpg" alt="beautiful castle">
+    </div>
+
     <div id="scroll-up">
       <a href="#header"></a>
     </div>
 
-    <div id="academics-content">
-      <h2>History</h2>
-      <h2>Standards</h2>
-      <h2>Degrees</h2>
-      <h2>Feedback form</h2>
+    <div id="main-content">
+      <section class="news">
+        <h2>News</h2>
+        <div>
+          <a href="https://en.wikipedia.org/wiki/China">
+            <img src="../images/diligation-visit-university.jpg" alt="diligation visiting university">
+            <p>
+              A delegation from China visited our supernatural presentation the other day!
+            </p>
+          </a>
+        </div>
+        <div class="divider"></div>
+        <div>
+          <a href="https://en.wikipedia.org/wiki/Construction">
+            <img src="../images/new-building-construction.jpg" alt="two workers at new building construction">
+            <p>
+              The new building has been built to provide extra room for the people interested in supernatural abilities
+            </p>
+          </a>
+        </div>
+        <div class="divider"></div>
+        <div>
+          <a href="https://en.wikipedia.org/wiki/Supernatural_(American_TV_series)">
+            <img src="../images/develop-supernatural-abilities.jpg" alt="Sam and Dean supernatural skills">
+            <p>
+              Ask us a question about opportunity to develop the skills that you have never had before
+            </p>
+          </a>
+        </div>
+      </section>
+      <section class="introduction">
+        <section class="history">
+          <h2>History</h2>
+          <p>
+            <strong>Our rich history starts with .... traditions, cherished relationships and customs take a tremendous
+              role inour university.</strong>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis dolores, sunt aut nisi voluptatibus non
+            exercitationem atque dignissimos fugit, velit impedit aperiam quo. Minus cumque voluptatem sapiente facilis
+            iure asperiores? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim fuga libero perferendis
+            doloribus. Veritatis quae exercitationem animi, voluptate nam iste odio tempora autem molestias voluptatem,
+            numquam ipsum ad, alias vitae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi illo aliquam at
+            ab amet nihil officiis repudiandae nobis, necessitatibus quidem magnam facere facilis quod in nulla eaque,
+            dolorum et odio! Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum odio eligendi blanditiis et
+            sint
+            minus quia nostrum? Ullam nulla vitae eligendi illo, facere et cum qui, inventore unde odio cumque.
+          </p>
+        </section>
+        <section class="standards">
+          <h2>Standards</h2>
+          <p>
+            <strong>Our biggest standard is that everybody has an equal opportunity and can grow and develop as they
+              go</strong>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam tenetur assumenda suscipit harum
+            placeat?
+            Harum fugiat dolores suscipit cumque optio delectus nesciunt sit at earum reprehenderit, obcaecati
+            temporibus
+            nisi animi! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia vel soluta, temporibus, porro
+            quibusdam, natus amet vitae labore nam dignissimos voluptatum repellat molestiae corrupti rerum animi
+            deleniti
+            qui rem! Similique.
+          </p>
+        </section>
+        <section class="degrees">
+          <h2>Degrees</h2>
+          <ul>
+            <li>Software Engineering</li>
+            <li>Supernatural Science</li>
+            <li>Arts</li>
+            <li>Athletics</li>
+            <li>General Studies</li>
+          </ul>
+        </section>
+        <section class="contact-form">
+          <h2>Leave your feedback</h2>
+          <form action="">
+            <div class="column">
+              <input type="text" id="first-name" name="firstname" placeholder="Name">
+              <input type="text" id="first-name" name="firstname" placeholder="Email">
+            </div>
+            <div>
+              <input type="text" id="first-name" name="firstname" placeholder="Phone Number">
+            </div>
+            <div>
+              <select>
+                <option value="default" disabled selected>---Choose Subject---</option>
+                <option value="quote">Request a quote</option>
+                <option value="bug">Website Bug</option>
+                <option value="content">Missing Content</option>
+                <option value="suggestion">Suggestion</option>
+                <option value="complaint">Complaint</option>
+              </select>
+            </div>
+            <div>
+              <textarea id="message" name="message" placeholder="Message"></textarea>
+            </div>
+            <div class="buttons">
+              <button type="submit">Send</button>
+              <button type="reset">Reset</button>
+            </div>
+          </form>
+        </section>
+      </section>
     </div>
 
   </main>

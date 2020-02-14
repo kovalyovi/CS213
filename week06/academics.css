@@ -1,0 +1,146 @@
+section > h2 {
+  margin-top: 0;
+}
+
+section:not(:first-child) h2 {
+  margin-top: 60px !important;
+}
+
+h2 {
+  font-family: 'Luckiest Guy', cursive;
+}
+
+form {
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  border: 1px solid #890d0db0;
+  border-radius: 4px;
+  background-color: #f8ef984a;
+}
+
+.contact-form {
+  margin-bottom: 45px;
+}
+
+.degrees ul {
+  font-size: 30px;
+}
+
+.degrees li {
+  margin-bottom: 15px;
+  font-family: 'Shojumaru', cursive;
+  color: #9e3c0f;
+}
+
+.contact-form form > div {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input,
+select,
+textarea {
+  width: 48%;
+  margin-right: 15px;
+  padding: 5px 15px;
+  border: 1px solid rgba(2, 123, 179, 0.397);
+  border-radius: 4px;
+}
+
+textarea {
+  height: 120px;
+}
+
+.contact-form form div.buttons {
+  display: flex;
+  flex-direction: row;
+  width: 48%;
+  justify-content: center;
+}
+
+button {
+  margin: 0 10px;
+  border-radius: 12px;
+  color: white;
+  border: 2px solid rgb(13, 143, 56);
+  background: rgb(13, 143, 56);
+  padding: 5px 14px;
+  font-size: 120%;
+  transition: all 0.17s ease-out;
+}
+
+button:last-child {
+  border: 2px solid rgb(167, 96, 16);
+  background: rgb(167, 96, 16);
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: rgb(13, 143, 56);
+}
+
+button:last-child:hover {
+  color: rgb(167, 96, 16);
+}
+
+.image-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+
+section p {
+  margin-left: 15px;
+  margin-right: 7vw;
+  font-size: 22px;
+}
+
+.introduction {
+  padding-left: 45px;
+}
+
+@media screen and (max-width: 900px) {
+  section p {
+    font-size: 100%;
+    margin: 3px;
+    margin-right: 10px;
+  }
+  section {
+    width: 100%;
+  }
+  .introduction {
+    padding-left: 10px;
+  }
+  .degrees ul {
+    font-size: 115%;
+  }
+  form {
+    width: auto;
+  }
+  form,
+  form > div {
+    justify-content: center;
+    align-items: center;
+  }
+  form {
+    padding: 5px;
+  }
+  .column {
+    flex-direction: column;
+  }
+  input,
+  select,
+  textarea {
+    width: 70%;
+  }
+
+  .column > input:first-child {
+    margin-bottom: 15px;
+  }
+}

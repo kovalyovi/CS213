@@ -24,11 +24,15 @@
 }
 
 #athletics-content ul p {
-  margin-top: 20px;
+  margin-top: -30px;
 }
 
 #athletics-content ul li {
   padding: 1.5rem;
+}
+
+#athletics-content > p {
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 700px) {
