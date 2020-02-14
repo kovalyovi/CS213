@@ -1,34 +1,38 @@
-#arts-content {
+#athletics-content {
   margin-bottom: 60px;
 }
 
-#arts-content p {
+#athletics-content p {
   max-width: 600px;
   margin: 0 auto 30px;
 }
 
-#arts-content h2 {
+#athletics-content h2 {
   text-align: center;
   margin-top: -15px;
 }
 
-#arts-content ul {
+#athletics-content ul {
   padding-left: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 1rem;
 }
 
-#arts-content ul img {
+#athletics-content ul img {
   border-radius: 40px;
 }
 
-#arts-content ul li {
+#athletics-content ul p {
+  margin-top: 20px;
+}
+
+#athletics-content ul li {
   padding: 1.5rem;
 }
 
 @media screen and (max-width: 700px) {
-  #arts-content ul {
+  #athletics-content ul {
     grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
   }
 }

@@ -64,6 +64,7 @@ nav>ul>li:hover {
 
 #header-navbar {
   display: flex;
+  margin-left: 132px;
 }
 
 #menu-button {
