@@ -13,3 +13,7 @@ $(window).scroll(e => {
     $('#scroll-up').hide();
   }
 });
+
+
+//form.reportValidity()
+//.setCustomValidity("asdf")
