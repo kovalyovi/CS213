@@ -13,26 +13,6 @@
   <script src="./assign07.js"></script>
 </head>
 
-<script>
-  function calculateLoan() {
-    let form = document.getElementById("myForm");
-    let output = document.getElementById("payment");
-
-    let apr = Number(document.getElementById("apr").value) / 100 / 12;
-    let term = Number(document.getElementById("term").value) * 12;
-    let amount = Number(document.getElementById("amount").value);
-
-    let result = amount * (apr * Math.pow(1 + apr, term)) / (Math.pow(1 + apr, term) - 1);
-
-    console.log(result);
-    console.log(apr);
-    console.log(amount);
-    console.log(term);
-
-    output.value = (result).toFixed(2);
-  }
-</script>
-
 <body>
   <header>
     <div id="header"></div>
@@ -42,33 +22,39 @@
     <div id="scroll-up">
       <a href="#header"></a>
     </div>
+    <div class="form">
+      <form id="myForm" autocomplete="off" onchange="calculateLoan(false)">
+        <!-- <input autocomplete="false" name="hidden" type="text" style="display:none;"> -->
+        <div class="apr">
+          <label for="apr">Loan Rate: </label>
+          <input type="number" placeholder="Rate" id="apr" name="apr" value="" step="0.01" min="0.01" max="25.00"
+            required onclick="select()" onchange="calculateLoan(false)">
+        </div>
 
-    <form id="myForm">
-      <div>
-        <label for="apr">Loan Rate: </label>
-        <input type="number" placeholder="Rate" id="apr" name="apr" value="" step="0.01" min="0.0" max="25.00">
-      </div>
+        <div class="years">
+          <label for="term">Loan Term(years)</label>
+          <input type="number" placeholder="Term" id="term" name="term" value="" step="1" min="1" max="40" required
+            onclick="select()" onchange="calculateLoan(false)">
+        </div>
 
-      <div>
-        <label for="term">Loan Term(years)</label>
-        <input type="number" placeholder="Term" id="term" name="term" value="" step="1" min="0" max="40">
-      </div>
+        <div class="amount">
+          <label for="amount">Loan Amount</label>
+          <input type="number" placeholder="Amount" id="amount" name="amount" value="" step="0.01" min="0" required
+            onclick="select()" onchange="calculateLoan(false)">
+        </div>
 
-      <div>
-        <label for="amount">Loan Amount(dollars)</label>
-        <input type="number" placeholder="Amount" id="amount" name="amount" value="" step="0.01" min="0">
-      </div>
+        <div class="monthly">
+          <label for="payment">Monthly Payment</label>
+          <input type="text" id="payment" name="payment" value="0.00" readonly>
+        </div>
 
-      <div>
-        <input type="text" id="payment" name="payment" value="$0.00" readonly>
-      </div>
+        <div class="buttons">
+          <button type="button" id="calculate" onclick="calculateLoan()">Calculate</button>
+          <button type="reset" id="clear" onclick="return confirmReset()">Clear Form</button>
+        </div>
 
-      <div class="buttons">
-        <button type="button" id="calculate" onclick="calculateLoan()">Calculate</button>
-        <button type="reset" id="clear">Clear Form</button>
-      </div>
-
-    </form>
+      </form>
+    </div>
 
   </main>
 
