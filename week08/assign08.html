@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortgage Calculator | ILYA Kovalyov</title>
+  <meta name="description" content="JavaScript Mortgage Calculator will help you prepare for your expenses">
+  <meta name="author" content="ILYA Kovalyov">
+  <link href="../lib/header.css" rel="stylesheet">
+  <link href="./assign08.css" rel="stylesheet">
+  <script src="../lib/jquery-3.4.1.min.js"></script>
+  <script src="./assign08.js"></script>
+</head>
+
+<body>
+  <header>
+    <div id="header"></div>
+  </header>
+
+  <main>
+    <div id="scroll-up">
+      <a href="#header"></a>
+    </div>
+    <div>
+      <ul>
+        <li>Event Handlers for validation</li>
+        <li>All validation is done on the client</li>
+        <li>Messages are nice and easy to read</li>
+        <li>add onChange to notify right after the mistake is made</li>
+      </ul>
+    </div>
+    <div class="form">
+      <form id="myForm" autocomplete="off" onchange="calculateLoan(false)">
+        <!-- <input autocomplete="false" name="hidden" type="text" style="display:none;"> -->
+        <div class="firstName">
+          <label for="firstName">Loan Rate: </label>
+          <input type="text" placeholder="First Name" id="firstName" name="firstName" required onclick="" onchange="">
+        </div>
+
+        <div class="lastName">
+          <label for="lastName">Loan Rate: </label>
+          <input type="text" placeholder="Last Name" id="lastName" name="lastName" required onclick="" onchange="">
+        </div>
+
+        <div class="years">
+          <label for="term">Loan Term(years)</label>
+          <input type="number" placeholder="Term" id="term" name="term" value="" step="1" min="1" max="40" required
+            onclick="select()" onchange="calculateLoan(false)">
+        </div>
+
+        <div class="amount">
+          <label for="amount">Loan Amount</label>
+          <input type="number" placeholder="Amount" id="amount" name="amount" value="" step="0.01" min="0" required
+            onclick="select()" onchange="calculateLoan(false)">
+        </div>
+
+        <div class="monthly">
+          <label for="payment">Monthly Payment</label>
+          <input type="text" id="payment" name="payment" value="0.00" readonly>
+        </div>
+
+        <div class="buttons">
+          <button type="button" id="calculate" onclick="calculateLoan()">Calculate</button>
+          <button type="reset" id="clear" onclick="return confirmReset()">Clear Form</button>
+        </div>
+
+      </form>
+    </div>
+    <!-- <div class="form">
+      <form id="myForm" autocomplete="off" onchange="calculateLoan(false)">
+        <div class="apr">
+          <label for="apr">Loan Rate: </label>
+          <input type="number" placeholder="Rate" id="apr" name="apr" value="" step="0.01" min="0.01" max="25.00"
+            required onclick="select()" onchange="calculateLoan(false)">
+        </div>
+
+        <div class="years">
+          <label for="term">Loan Term(years)</label>
+          <input type="number" placeholder="Term" id="term" name="term" value="" step="1" min="1" max="40" required
+            onclick="select()" onchange="calculateLoan(false)">
+        </div>
+
+        <div class="amount">
+          <label for="amount">Loan Amount</label>
+          <input type="number" placeholder="Amount" id="amount" name="amount" value="" step="0.01" min="0" required
+            onclick="select()" onchange="calculateLoan(false)">
+        </div>
+
+        <div class="monthly">
+          <label for="payment">Monthly Payment</label>
+          <input type="text" id="payment" name="payment" value="0.00" readonly>
+        </div>
+
+        <div class="buttons">
+          <button type="button" id="calculate" onclick="calculateLoan()">Calculate</button>
+          <button type="reset" id="clear" onclick="return confirmReset()">Clear Form</button>
+        </div>
+
+      </form>
+    </div> -->
+
+  </main>
+
+  <footer>
+    <div id="footer">
+      <div class="copyright">
+        <span>
+          Copyright © 2020 Rexburg USA, ILYA at BYU-Idaho. All rights reserved.
+        </span>
+      </div>
+      <div class="byui-link">
+        <a href="http://www.byui.edu/" target="_blank">BYUI Homepage</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

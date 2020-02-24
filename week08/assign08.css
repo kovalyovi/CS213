@@ -1,0 +1,230 @@
+* {
+  box-sizing: border-box;
+}
+
+.form {
+  padding: 15px;
+}
+
+#header-navbar {
+  z-index: 10;
+}
+
+#myForm {
+  max-width: 500px;
+  min-width: 240px;
+  margin: 0 auto;
+  border: 2px solid green;
+  padding: 10px;
+  border-radius: 6px;
+  background: rgb(255, 255, 200);
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 6px;
+  padding-left: 18px;
+  border: 1px solid transparent;
+  transition: all .12s ease-out;
+}
+
+#myForm>div:hover input {
+  border-color: blue;
+}
+
+#myForm>div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+#myForm>div.amount:before, #myForm>div.monthly:before {
+  content: "$";
+  display: block;
+  position: absolute;
+  top: 31px;
+  left: 5px;
+  font-size: 80%;
+  color: #0c6706;
+}
+
+#myForm>div.apr:before {
+  content: "%";
+  display: block;
+  position: absolute;
+  top: 31px;
+  left: 5px;
+  font-size: 80%;
+  color: #5f0606;
+}
+
+#myForm .buttons {
+  margin-top: 35px;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.buttons button:first-child {
+  margin-right: 25px;
+}
+
+.buttons button {
+  outline: none;
+  background: white;
+  border: 2px solid green;
+  transition: all .12s ease-out;
+  cursor: pointer;
+  color: green;
+  padding: 8px 15px;
+  font-size: 1.1em;
+  border-radius: 16px;
+}
+
+.buttons button:first-child:hover, .buttons button:first-child:focus {
+  background: green;
+  color: white;
+}
+
+.buttons button:last-child {
+  border-color: rgb(124, 38, 5);
+  color: rgb(124, 38, 5);
+}
+
+.buttons button:last-child:hover, .buttons button:last-child:focus {
+  background: rgb(124, 38, 5);
+  color: white;
+}
+
+header .header-intro {
+  margin: 15px;
+}
+
+#navbar {
+  height: 42px;
+}
+
+main {
+  min-height: calc(100vh - 42px - 60px);
+}
+
+#scroll-up {
+  padding: 0;
+}
+
+#scroll-up a {
+  position: fixed;
+  bottom: 80px;
+  border-radius: 11px;
+  right: 27px;
+  width: 30px;
+  height: 50px;
+  background-color: rgba(90, 90, 90, 0.38);
+  transition: all 0.17s ease-out;
+  border: 1px solid #a6a6a6;
+  box-sizing: border-box;
+  color: transparent;
+}
+
+#scroll-up a:hover {
+  background-color: rgba(90, 90, 90, 0.68);
+  cursor: pointer;
+}
+
+#scroll-up a:after {
+  content: '>';
+  color: #f3f3f3;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  left: -2px;
+  font-size: 2em;
+  transform: rotate(-90deg);
+}
+
+#footer {
+  position: relative;
+  width: 100%;
+  background: black;
+  height: 60px;
+  color: #b5b5b5;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#footer .copyright span {
+  margin-left: 20px;
+  width: 20%;
+  font-size: 0.8em;
+}
+
+#footer .byui-link {
+  position: absolute;
+  right: 30px;
+}
+
+#footer .byui-link a {
+  color: #ffa50094;
+  transition: color 0.17s ease-out;
+  text-decoration: none;
+}
+
+#footer .byui-link a:hover {
+  color: #ff7b00c7;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1300px) {
+  .text-holder p {
+    margin-top: 2vw;
+    font-size: 200%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #main-content {
+    font-size: 90%;
+  }
+  .content-holder {
+    flex-direction: column;
+  }
+  .content-holder>div {
+    width: 100%;
+  }
+  ul li {
+    margin-bottom: 5px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #footer {
+    flex-direction: column;
+    justify-content: center;
+    font-size: 71%;
+  }
+  #footer .byui-link {
+    position: initial;
+  }
+  .copyright {
+    margin-bottom: 8px;
+  }
+  #footer .copyright span {
+    margin-left: 0;
+  }
+  hr {
+    margin: 60px 30px;
+  }
+  ul {
+    padding: 0;
+  }
+}
