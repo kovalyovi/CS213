@@ -14,10 +14,10 @@
   max-width: 500px;
   min-width: 240px;
   margin: 0 auto;
-  border: 2px solid green;
+  border: 2px solid rgb(25, 76, 187);
   padding: 10px;
   border-radius: 6px;
-  background: rgb(255, 255, 200);
+  background: white;
 }
 
 label {
@@ -29,17 +29,26 @@ input {
   padding-left: 18px;
   border: 1px solid transparent;
   transition: all .12s ease-out;
+  border: 1px solid rgb(206, 206, 206);
 }
 
-#myForm>div:hover input {
+#myForm>div input:hover {
   border-color: blue;
 }
 
 #myForm>div {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
   position: relative;
+  margin-bottom: 20px;
+}
+
+input, select {
+  margin-bottom: 10px;
+}
+
+select {
+  width: 60px;
 }
 
 #myForm>div.amount:before, #myForm>div.monthly:before {
@@ -84,6 +93,13 @@ input {
   border-radius: 16px;
 }
 
+#myForm .names {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .buttons button:first-child:hover, .buttons button:first-child:focus {
   background: green;
   color: white;
@@ -109,6 +125,11 @@ header .header-intro {
 
 main {
   min-height: calc(100vh - 42px - 60px);
+}
+
+hr {
+  margin: 10px 30px 20px;
+  background: rgb(81, 142, 255);
 }
 
 #scroll-up {
@@ -220,9 +241,6 @@ main {
   }
   #footer .copyright span {
     margin-left: 0;
-  }
-  hr {
-    margin: 60px 30px;
   }
   ul {
     padding: 0;

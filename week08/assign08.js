@@ -1,3 +1,8 @@
+
+
+//ON INPUT!!!!
+
+
 //calculates the monthly loan based on input
 function calculateLoan(isClicked = true) {
   //initialize the form and the output
@@ -60,7 +65,11 @@ function calculateLoan(isClicked = true) {
 
 //asks for confirmation before resetting the form
 function confirmReset() {
-  return confirm("Are you sure you want to erase the form?");
+  let isConfirmed = confirm("Are you sure you want to erase the form?");
+  if (isConfirmed) {
+    document.getElementById("first_name").focus();
+  }
+  return isConfirmed;
 }
 
 //JQUERY used for navigation (NOT assignment)

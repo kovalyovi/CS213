@@ -35,40 +35,58 @@
       </ul>
     </div>
     <div class="form">
-      <form id="myForm" autocomplete="off" onchange="calculateLoan(false)">
+      <form id="myForm" autocomplete="off" onchange="calculateLoan(false)" onreset="return confirmReset()">
         <!-- <input autocomplete="false" name="hidden" type="text" style="display:none;"> -->
-        <div class="first_name">
-          <label for="first_name">First Name: </label>
-          <input type="text" placeholder="Tommy" id="first_name" name="first_name" required onclick="select()"
-            onchange="">
-        </div>
-
-        <div class="last_name">
-          <label for="last_name">Last Name: </label>
-          <input type="text" placeholder="Atkins" id="last_name" name="last_name" required onclick="select()"
-            onchange="">
+        <div class="names">
+          <div class="first_name">
+            <input type="text" placeholder="Tommy" id="first_name" name="first_name" required onclick="select()"
+              onchange="">
+          </div>
+          <div class="last_name">
+            <input type="text" placeholder="Atkins" id="last_name" name="last_name" required onclick="select()"
+              onchange="">
+          </div>
         </div>
 
         <div class="address">
-          <label for="address">Address: </label>
-          <textarea id="address" name="address" rows="4" required></textarea>
+          <input type="text" placeholder="1752 Northland Ave" id="street_1" name="street_1" onclick="select()"
+            onchange="" required>
+          <input type="text" placeholder="Apt 9" id="street_2" name="street_2" onclick="select()" onchange="">
+          <input type="text" placeholder="Rexburg" id="city" name="city" onclick="select()" onchange="" required>
+          <select id="state">
+            <option value="ID">ID</option>
+            <option value="UT">UT</option>
+            <option value="WA">WA</option>
+            <option value="WY">WY</option>
+          </select>
+          <input type="text" placeholder="83400" id="zip" name="zip" onclick="select()" onchange="" required
+            minlength="5" maxlength="5" pattern="^\\d{5}$">
         </div>
 
         <div class="phone">
-          <label for="phone">Phone Number: </label>
           <input type="text" placeholder="555-123-4567" id="phone" name="phone" pattern="^\\d{3}-\\d{3}-\\d{4}$"
             required onclick="select()" onchange="">
         </div>
 
+        <hr>
+
         <div class="items">
-          <input type="checkbox" id="item_0" name="item_0" value="24">
-          <label for="items">Shoes -- $24</label>
-          <input type="checkbox" id="item_1" name="item_1" value="12">
-          <label for="items">Pants -- $12</label>
-          <input type="checkbox" id="item_2" name="item_2" value="9">
-          <label for="items">Hat -- $9</label>
-          <input type="checkbox" id="item_3" name="item_3" value="34">
-          <label for="items">Coat -- $34</label>
+          <div>
+            <input type="checkbox" id="item_0" name="item_0" value="24">
+            <label for="items">Shoes -- $24</label>
+          </div>
+          <div>
+            <input type="checkbox" id="item_1" name="item_1" value="12">
+            <label for="items">Pants -- $12</label>
+          </div>
+          <div>
+            <input type="checkbox" id="item_2" name="item_2" value="9">
+            <label for="items">Hat -- $9</label>
+          </div>
+          <div>
+            <input type="checkbox" id="item_3" name="item_3" value="34">
+            <label for="items">Coat -- $34</label>
+          </div>
         </div>
 
         <div class="total">
@@ -77,6 +95,7 @@
         </div>
 
         <div class="card">
+          <span>Select Card</span>
           <input type="radio" id="visa" name="card" value="visa" checked>
           <label for="visa">Visa</label><br>
           <input type="radio" id="mastercard" name="card" value="mastercard">
@@ -86,20 +105,18 @@
         </div>
 
         <div class="credit_card">
-          <label for="credit_card">Card Number: </label>
           <input type="text" id="credit_card" name="credit_card" placeholder="xxxx xxxx xxxx xxxx (no spaces)"
             maxlength="16" minlength="16" pattern="^\d{16}$" onclick="select()">
         </div>
 
         <div class="exp_date">
-          <label for="exp_date">Expiration Date: </label>
           <input type="text" id="exp_date" name="exp_date" placeholder="mm/yyyy" maxlength="16" minlength="16"
-            match="^[0-2]{2}\\/20[2-3][0-9]$" onclick="select()">
+            match="((0[0-9])|(1[0-2]))\\/20[2-3][0-9]$" onclick="select()">
         </div>
 
         <div class="buttons">
-          <button type="button" id="calculate" onclick="calculateLoan()">Submit</button>
-          <button type="reset" id="clear" onclick="return confirmReset()">Reset</button>
+          <button type="button" name="validate" id="calculate" onclick="calculateLoan()">Submit</button>
+          <button type="reset" name="reset" id="clear" onclick="return confirmReset()">Reset</button>
         </div>
 
       </form>
