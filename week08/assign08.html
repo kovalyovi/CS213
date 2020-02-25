@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mortgage Calculator | ILYA Kovalyov</title>
-  <meta name="description" content="JavaScript Mortgage Calculator will help you prepare for your expenses">
+  <title>JS Form Validation | ILYA Kovalyov</title>
+  <meta name="description" content="JavaScript Form validation practice with ILYA Kovalyov">
   <meta name="author" content="ILYA Kovalyov">
   <link href="../lib/header.css" rel="stylesheet">
   <link href="./assign08.css" rel="stylesheet">
@@ -28,41 +28,78 @@
         <li>All validation is done on the client</li>
         <li>Messages are nice and easy to read</li>
         <li>add onChange to notify right after the mistake is made</li>
+        <li>document.id.action</li>
+        <li>Nicely formatted</li>
+        <li>onclick, onchange, onsubmit, onreset, onload</li>
+        <li>focus()</li>
       </ul>
     </div>
     <div class="form">
       <form id="myForm" autocomplete="off" onchange="calculateLoan(false)">
         <!-- <input autocomplete="false" name="hidden" type="text" style="display:none;"> -->
-        <div class="firstName">
-          <label for="firstName">Loan Rate: </label>
-          <input type="text" placeholder="First Name" id="firstName" name="firstName" required onclick="" onchange="">
+        <div class="first_name">
+          <label for="first_name">First Name: </label>
+          <input type="text" placeholder="Tommy" id="first_name" name="first_name" required onclick="select()"
+            onchange="">
         </div>
 
-        <div class="lastName">
-          <label for="lastName">Loan Rate: </label>
-          <input type="text" placeholder="Last Name" id="lastName" name="lastName" required onclick="" onchange="">
+        <div class="last_name">
+          <label for="last_name">Last Name: </label>
+          <input type="text" placeholder="Atkins" id="last_name" name="last_name" required onclick="select()"
+            onchange="">
         </div>
 
-        <div class="years">
-          <label for="term">Loan Term(years)</label>
-          <input type="number" placeholder="Term" id="term" name="term" value="" step="1" min="1" max="40" required
-            onclick="select()" onchange="calculateLoan(false)">
+        <div class="address">
+          <label for="address">Address: </label>
+          <textarea id="address" name="address" rows="4" required></textarea>
         </div>
 
-        <div class="amount">
-          <label for="amount">Loan Amount</label>
-          <input type="number" placeholder="Amount" id="amount" name="amount" value="" step="0.01" min="0" required
-            onclick="select()" onchange="calculateLoan(false)">
+        <div class="phone">
+          <label for="phone">Phone Number: </label>
+          <input type="text" placeholder="555-123-4567" id="phone" name="phone" pattern="^\\d{3}-\\d{3}-\\d{4}$"
+            required onclick="select()" onchange="">
         </div>
 
-        <div class="monthly">
-          <label for="payment">Monthly Payment</label>
-          <input type="text" id="payment" name="payment" value="0.00" readonly>
+        <div class="items">
+          <input type="checkbox" id="item_0" name="item_0" value="24">
+          <label for="items">Shoes -- $24</label>
+          <input type="checkbox" id="item_1" name="item_1" value="12">
+          <label for="items">Pants -- $12</label>
+          <input type="checkbox" id="item_2" name="item_2" value="9">
+          <label for="items">Hat -- $9</label>
+          <input type="checkbox" id="item_3" name="item_3" value="34">
+          <label for="items">Coat -- $34</label>
+        </div>
+
+        <div class="total">
+          <label for="total">Total: </label>
+          <input type="text" id="total" name="total" value="0.00" readonly>
+        </div>
+
+        <div class="card">
+          <input type="radio" id="visa" name="card" value="visa" checked>
+          <label for="visa">Visa</label><br>
+          <input type="radio" id="mastercard" name="card" value="mastercard">
+          <label for="mastercard">Mastercard</label><br>
+          <input type="radio" id="american_express" name="card" value="american_express">
+          <label for="american_express">American Express</label>
+        </div>
+
+        <div class="credit_card">
+          <label for="credit_card">Card Number: </label>
+          <input type="text" id="credit_card" name="credit_card" placeholder="xxxx xxxx xxxx xxxx (no spaces)"
+            maxlength="16" minlength="16" pattern="^\d{16}$" onclick="select()">
+        </div>
+
+        <div class="exp_date">
+          <label for="exp_date">Expiration Date: </label>
+          <input type="text" id="exp_date" name="exp_date" placeholder="mm/yyyy" maxlength="16" minlength="16"
+            match="^[0-2]{2}\\/20[2-3][0-9]$" onclick="select()">
         </div>
 
         <div class="buttons">
-          <button type="button" id="calculate" onclick="calculateLoan()">Calculate</button>
-          <button type="reset" id="clear" onclick="return confirmReset()">Clear Form</button>
+          <button type="button" id="calculate" onclick="calculateLoan()">Submit</button>
+          <button type="reset" id="clear" onclick="return confirmReset()">Reset</button>
         </div>
 
       </form>
