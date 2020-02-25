@@ -22,70 +22,63 @@
     <div id="scroll-up">
       <a href="#header"></a>
     </div>
-    <div>
-      <ul>
-        <li>Event Handlers for validation</li>
-        <li>All validation is done on the client</li>
-        <li>Messages are nice and easy to read</li>
-        <li>add onChange to notify right after the mistake is made</li>
-        <li>document.id.action</li>
-        <li>Nicely formatted</li>
-        <li>onclick, onchange, onsubmit, onreset, onload</li>
-        <li>focus()</li>
-      </ul>
-    </div>
     <div class="form">
-      <form id="myForm" autocomplete="off" onchange="calculateLoan(false)" onreset="return confirmReset()">
+      <form id="myForm" action="#" autocomplete="off" onreset="return confirmReset()">
         <!-- <input autocomplete="false" name="hidden" type="text" style="display:none;"> -->
         <div class="names">
-          <div class="first_name">
+          <div class="first_name required">
             <input type="text" placeholder="Tommy" id="first_name" name="first_name" required onclick="select()"
-              onchange="">
+              oninput="">
           </div>
-          <div class="last_name">
+          <div class="last_name required">
             <input type="text" placeholder="Atkins" id="last_name" name="last_name" required onclick="select()"
-              onchange="">
+              oninput="">
           </div>
         </div>
 
         <div class="address">
-          <input type="text" placeholder="1752 Northland Ave" id="street_1" name="street_1" onclick="select()"
-            onchange="" required>
-          <input type="text" placeholder="Apt 9" id="street_2" name="street_2" onclick="select()" onchange="">
-          <input type="text" placeholder="Rexburg" id="city" name="city" onclick="select()" onchange="" required>
+          <div class="required">
+            <input type="text" placeholder="1752 Northland Ave" id="street_1" name="street_1" onclick="select()"
+              oninput="" required>
+          </div>
+          <input type="text" placeholder="Apt 9" id="street_2" name="street_2" onclick="select()" oninput="">
+          <div class="required"></div>
+          <input type="text" placeholder="Rexburg" id="city" name="city" onclick="select()" oninput="" required>
           <select id="state">
             <option value="ID">ID</option>
             <option value="UT">UT</option>
             <option value="WA">WA</option>
             <option value="WY">WY</option>
           </select>
-          <input type="text" placeholder="83400" id="zip" name="zip" onclick="select()" onchange="" required
-            minlength="5" maxlength="5" pattern="^\\d{5}$">
+          <div class="required half">
+            <input type="text" placeholder="83400" id="zip" name="zip" onclick="select()" oninput="" required
+              minlength="5" maxlength="5" pattern="^\d{5}$">
+          </div>
         </div>
 
-        <div class="phone">
-          <input type="text" placeholder="555-123-4567" id="phone" name="phone" pattern="^\\d{3}-\\d{3}-\\d{4}$"
-            required onclick="select()" onchange="">
+        <div class="phone required half">
+          <input type="text" placeholder="555-123-4567" id="phone" name="phone" pattern="^\d{3}-\d{3}-\d{4}$" required
+            onclick="select()" oninput="">
         </div>
 
         <hr>
 
         <div class="items">
           <div>
-            <input type="checkbox" id="item_0" name="item_0" value="24">
-            <label for="items">Shoes -- $24</label>
+            <input type="checkbox" id="item_0" name="item_0" value="24.99" oninput="calculateTotal(this)">
+            <label for="item_0">Shoes -- $24.99</label>
           </div>
           <div>
-            <input type="checkbox" id="item_1" name="item_1" value="12">
-            <label for="items">Pants -- $12</label>
+            <input type="checkbox" id="item_1" name="item_1" value="12.49" oninput="calculateTotal(this)">
+            <label for="item_1">Pants -- $12.49</label>
           </div>
           <div>
-            <input type="checkbox" id="item_2" name="item_2" value="9">
-            <label for="items">Hat -- $9</label>
+            <input type="checkbox" id="item_2" name="item_2" value="9.99" oninput="calculateTotal(this)">
+            <label for="item_2">Hat -- $9.99</label>
           </div>
           <div>
-            <input type="checkbox" id="item_3" name="item_3" value="34">
-            <label for="items">Coat -- $34</label>
+            <input type="checkbox" id="item_3" name="item_3" value="34.49" oninput="calculateTotal(this)">
+            <label for="item_3">Coat -- $34.49</label>
           </div>
         </div>
 
@@ -95,65 +88,37 @@
         </div>
 
         <div class="card">
-          <span>Select Card</span>
-          <input type="radio" id="visa" name="card" value="visa" checked>
-          <label for="visa">Visa</label><br>
-          <input type="radio" id="mastercard" name="card" value="mastercard">
-          <label for="mastercard">Mastercard</label><br>
-          <input type="radio" id="american_express" name="card" value="american_express">
-          <label for="american_express">American Express</label>
+          <div>
+            <input type="radio" id="visa" name="card" value="visa" checked>
+            <label for="visa">Visa</label><br>
+          </div>
+          <div>
+            <input type="radio" id="mastercard" name="card" value="mastercard">
+            <label for="mastercard">Mastercard</label><br>
+          </div>
+          <div>
+            <input type="radio" id="american_express" name="card" value="american_express">
+            <label for="american_express">American Express</label>
+          </div>
         </div>
 
-        <div class="credit_card">
+        <div class="credit_card required">
           <input type="text" id="credit_card" name="credit_card" placeholder="xxxx xxxx xxxx xxxx (no spaces)"
-            maxlength="16" minlength="16" pattern="^\d{16}$" onclick="select()">
+            maxlength="16" minlength="16" pattern="^\d{16}$" required>
         </div>
 
-        <div class="exp_date">
-          <input type="text" id="exp_date" name="exp_date" placeholder="mm/yyyy" maxlength="16" minlength="16"
-            match="((0[0-9])|(1[0-2]))\\/20[2-3][0-9]$" onclick="select()">
+        <div class="exp_date required">
+          <input type="text" id="exp_date" name="exp_date" placeholder="mm/yyyy"
+            pattern="^((0[0-9])|(1[0-2]))/20[2-3][0-9]$" required>
         </div>
 
         <div class="buttons">
-          <button type="button" name="validate" id="calculate" onclick="calculateLoan()">Submit</button>
-          <button type="reset" name="reset" id="clear" onclick="return confirmReset()">Reset</button>
+          <button type="submit" name="validate" id="calculate" onclick="checkForm(event)">Submit</button>
+          <button type="reset" name="reset" id="clear">Reset</button>
         </div>
 
       </form>
     </div>
-    <!-- <div class="form">
-      <form id="myForm" autocomplete="off" onchange="calculateLoan(false)">
-        <div class="apr">
-          <label for="apr">Loan Rate: </label>
-          <input type="number" placeholder="Rate" id="apr" name="apr" value="" step="0.01" min="0.01" max="25.00"
-            required onclick="select()" onchange="calculateLoan(false)">
-        </div>
-
-        <div class="years">
-          <label for="term">Loan Term(years)</label>
-          <input type="number" placeholder="Term" id="term" name="term" value="" step="1" min="1" max="40" required
-            onclick="select()" onchange="calculateLoan(false)">
-        </div>
-
-        <div class="amount">
-          <label for="amount">Loan Amount</label>
-          <input type="number" placeholder="Amount" id="amount" name="amount" value="" step="0.01" min="0" required
-            onclick="select()" onchange="calculateLoan(false)">
-        </div>
-
-        <div class="monthly">
-          <label for="payment">Monthly Payment</label>
-          <input type="text" id="payment" name="payment" value="0.00" readonly>
-        </div>
-
-        <div class="buttons">
-          <button type="button" id="calculate" onclick="calculateLoan()">Calculate</button>
-          <button type="reset" id="clear" onclick="return confirmReset()">Clear Form</button>
-        </div>
-
-      </form>
-    </div> -->
-
   </main>
 
   <footer>

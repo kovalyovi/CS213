@@ -4,10 +4,24 @@
 
 .form {
   padding: 15px;
+  margin-top: 35px;
 }
 
-#header-navbar {
+#header-navbar,
+.dropdown-content {
   z-index: 10;
+}
+
+#street_1 {
+  width: 100%;
+}
+
+.required.half {
+  width: 50% !important;
+}
+
+.required.half input {
+  width: 100% !important;
 }
 
 #myForm {
@@ -24,35 +38,66 @@ label {
   margin-bottom: 5px;
 }
 
-input {
+#myForm.checked input:invalid {
+  border-color: brown;
+}
+
+input,
+select {
   padding: 6px;
   padding-left: 18px;
   border: 1px solid transparent;
-  transition: all .12s ease-out;
+  transition: all 0.12s ease-out;
   border: 1px solid rgb(206, 206, 206);
 }
 
-#myForm>div input:hover {
+.required {
+  position: relative;
+}
+
+.required::after {
+  content: '*';
+  display: block;
+  position: absolute;
+  right: 5px;
+  top: 3px;
+  color: red;
+  font-size: 80%;
+}
+
+#myForm > div > div {
+  width: 100%;
+}
+
+#myForm > div input:hover {
   border-color: blue;
 }
 
-#myForm>div {
+#myForm > div {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-bottom: 20px;
 }
 
-input, select {
+#myForm .card {
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-size: 80%;
+  margin-top: 10px;
+}
+
+input,
+select {
   margin-bottom: 10px;
 }
 
 select {
-  width: 60px;
+  width: 70px;
 }
 
-#myForm>div.amount:before, #myForm>div.monthly:before {
-  content: "$";
+#myForm > div.amount:before,
+#myForm > div.monthly:before {
+  content: '$';
   display: block;
   position: absolute;
   top: 31px;
@@ -61,8 +106,8 @@ select {
   color: #0c6706;
 }
 
-#myForm>div.apr:before {
-  content: "%";
+#myForm > div.apr:before {
+  content: '%';
   display: block;
   position: absolute;
   top: 31px;
@@ -72,7 +117,7 @@ select {
 }
 
 #myForm .buttons {
-  margin-top: 35px;
+  margin-top: 25px;
   flex-direction: row;
   justify-content: center;
 }
@@ -85,7 +130,7 @@ select {
   outline: none;
   background: white;
   border: 2px solid green;
-  transition: all .12s ease-out;
+  transition: all 0.12s ease-out;
   cursor: pointer;
   color: green;
   padding: 8px 15px;
@@ -100,7 +145,16 @@ select {
   width: 100%;
 }
 
-.buttons button:first-child:hover, .buttons button:first-child:focus {
+#myForm .names > div {
+  width: 48%;
+}
+
+#myForm .names div input {
+  width: 100%;
+}
+
+.buttons button:first-child:hover,
+.buttons button:first-child:focus {
   background: green;
   color: white;
 }
@@ -110,7 +164,8 @@ select {
   color: rgb(124, 38, 5);
 }
 
-.buttons button:last-child:hover, .buttons button:last-child:focus {
+.buttons button:last-child:hover,
+.buttons button:last-child:focus {
   background: rgb(124, 38, 5);
   color: white;
 }
@@ -219,7 +274,7 @@ hr {
   .content-holder {
     flex-direction: column;
   }
-  .content-holder>div {
+  .content-holder > div {
     width: 100%;
   }
   ul li {
