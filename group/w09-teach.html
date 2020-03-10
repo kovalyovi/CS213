@@ -1,0 +1,82 @@
+<!-- From https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Our superheroes</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+  <link rel="stylesheet" href="w09-teach.css">
+</head>
+
+<body>
+  <script>
+    window.onload = doStuff();
+
+    function doStuff() {
+      let url = "w09-json.json";
+      let xhr = new XMLHttpRequest();                      // step 1
+      xhr.onreadystatechange = function () {               // step 2
+        if (this.readyState == 4 && this.status == 200) {
+          // parse the json file into a javascript object
+          let response = JSON.parse(this.responseText);
+          console.log(response);
+          // pass the javascript object to another function
+          displayResponse(response);
+        }
+      };
+
+      xhr.open("GET", url, true);                         // step 3
+      xhr.send();
+    }
+
+    function displayResponse(data) {
+      // console.log(data);
+      var content = "";
+      var members = data.members;
+      content += `<h1>${data.squadName}</h1>`;
+      content += `<p>Hometown: ${data.homeTown}</p>`;
+      content += `<p>Formed: ${data.formed}</p>`;
+      content += `<p>Secret Base: ${data.secretBase}</p>`;
+      content += `<p>Active: ${data.active}</p>`;
+      // content += `<ul>`;
+
+      for (let member of members) {
+        content += `
+        <article>
+          <h2>${member.name}</h2>
+          <p>
+            Secret identity:${member.secretIdentity}
+            <br>Age:${member.age}
+            <ul>`;
+
+        for (let power of member.powers) {
+          content += `<li>${power}</li>`;
+        }
+
+        content += `</ul></p></article>`;
+      }
+
+      // content += `</ul>`;
+
+      document.getElementById('content').innerHTML = content;
+    }
+  </script>
+
+  <header>
+
+  </header>
+
+  <section id="content">
+
+  </section>
+
+  <script>
+    const header = document.querySelector('header');
+    const section = document.querySelector('section');
+  </script>
+</body>
+
+</html>

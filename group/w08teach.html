@@ -21,19 +21,102 @@
     }
   </style>
   <script>
-    function t1() {
-      let f1 = document.getElementById("form1").childNodes[1].childNodes;
-      let inp = Number(f1[1].value);
-      let err = f1[3];
 
-      if (inp >= 0 && inp <= 118) {
+    function check(el, message) {
+
+      let inp = el.value;
+      let regexp = RegExp(el.pattern);
+
+      let err = el.nextSibling.nextSibling;
+
+      if (regexp.test(inp)) {
         err.style.color = "green";
-        err.innerHTML = "Valid age";
+        err.innerHTML = "Valid " + message;
       } else {
         err.style.color = "red";
-        err.innerHTML = "Invalid age";
+        err.innerHTML = "Invalid " + message;
       }
     }
+    let states = ["AK - Alaska",
+      "AL - Alabama",
+      "AR - Arkansas",
+      "AS - American Samoa",
+      "AZ - Arizona",
+      "CA - California",
+      "CO - Colorado",
+      "CT - Connecticut",
+      "DC - District of Columbia",
+      "DE - Delaware",
+      "FL - Florida",
+      "GA - Georgia",
+      "GU - Guam",
+      "HI - Hawaii",
+      "IA - Iowa",
+      "ID - Idaho",
+      "IL - Illinois",
+      "IN - Indiana",
+      "KS - Kansas",
+      "KY - Kentucky",
+      "LA - Louisiana",
+      "MA - Massachusetts",
+      "MD - Maryland",
+      "ME - Maine",
+      "MI - Michigan",
+      "MN - Minnesota",
+      "MO - Missouri",
+      "MS - Mississippi",
+      "MT - Montana",
+      "NC - North Carolina",
+      "ND - North Dakota",
+      "NE - Nebraska",
+      "NH - New Hampshire",
+      "NJ - New Jersey",
+      "NM - New Mexico",
+      "NV - Nevada",
+      "NY - New York",
+      "OH - Ohio",
+      "OK - Oklahoma",
+      "OR - Oregon",
+      "PA - Pennsylvania",
+      "PR - Puerto Rico",
+      "RI - Rhode Island",
+      "SC - South Carolina",
+      "SD - South Dakota",
+      "TN - Tennessee",
+      "TX - Texas",
+      "UT - Utah",
+      "VA - Virginia",
+      "VI - Virgin Islands",
+      "VT - Vermont",
+      "WA - Washington",
+      "WI - Wisconsin",
+      "WV - West Virginia",
+      "WY - Wyoming"]
+
+    function check2(el, message) {
+
+      let inp = el.value;
+
+      let exists = false;
+
+      for (let state of states) {
+        state = state.substring(0, 2)
+        if (state == inp) {
+          exists = true;
+        }
+      }
+
+      let err = el.nextSibling.nextSibling;
+
+      if (exists) {
+        err.style.color = "green";
+        err.innerHTML = "Valid " + message;
+      } else {
+        err.style.color = "red";
+        err.innerHTML = "Invalid " + message;
+      }
+    }
+
   </script>
 </head>
 
@@ -43,11 +126,13 @@
   <p>Please indicate your age: 0-118 years</p>
   <form action="" id="form1">
     <div>
-      <input oninput="t1()" type="number" min="0" max="118" size="3" />
+      <input oninput="check(this, 'age')" type="number" min="1" max="118" size="3"
+        pattern="\b([1-9]|[1-8][0-9]|9[0-9]|10[0-9]|11[0-8])\b" />
       <span style="color:red">Invalid age</span>
     </div>
     <div>
-      <input size="3" />
+      <input size="3" oninput="check(this, 'age')" type="number" min="1" max="118" size="3"
+        pattern="\b([1-9]|[1-8][0-9]|9[0-9]|10[0-9]|11[0-8])\b" />
       <span style="color:red">Invalid age</span>
     </div>
   </form>
@@ -57,11 +142,11 @@
   <p>Please enter a Social Security Number: 000-00-0000</p>
   <form action="" id="form2">
     <div>
-      <input size="11" />
+      <input oninput="check(this, 'SSN')" size="11" type="text" pattern="^\d{3}-\d{2}-\d{4}$" />
       <span style="color:red">Invalid SSN</span>
     </div>
     <div>
-      <input size="11" />
+      <input oninput="check(this, 'SSN')" size="11" type="text" pattern="^\d{3}-\d{2}-\d{4}$" />
       <span style="color:red">Invalid SSN</span>
     </div>
   </form>
@@ -71,11 +156,11 @@
   <p>Please enter a credit card number: 0000 0000 0000 0000</p>
   <form action="" id="form3">
     <div>
-      <input size="19" />
+      <input oninput="check(this, 'credit card number')" size="19" type="text" pattern="^\d{4} \d{4} \d{4} \d{4}$" />
       <span style="color:red">Invalid credit card number</span>
     </div>
     <div>
-      <input size="19" />
+      <input oninput="check(this, 'credit card number')" size="19" type="text" pattern="^\d{4} \d{4} \d{4} \d{4}$" />
       <span style="color:red">Invalid credit card number</span>
     </div>
   </form>
@@ -85,11 +170,11 @@
   <p>Please enter a date: m/d/yyyy</p>
   <form action="" id="form4">
     <div>
-      <input size="9" />
-      <span style="color:red">Invalid date</span>
+      <input size="9" oninput="check(this, 'date')" pattern="^\b([1-9]|1[0-2])\b/\b([1-9]|1[0-2])\b/\d{4}$" />
+      <span style=" color:red">Invalid date</span>
     </div>
     <div>
-      <input size="9" />
+      <input size="9" oninput="check(this, 'date')" pattern="^\b([1-9]|1[0-2])\b/\b([1-9]|1[0-2])\b/\d{4}$" />
       <span style="color:red">Invalid date</span>
     </div>
   </form>
@@ -99,11 +184,11 @@
   <p>Please enter a 2-letter state abbreviation</p>
   <form action="" id="form5">
     <div>
-      <input size="2" />
+      <input size="2" oninput="check2(this, 'state abbreviation')" />
       <span style="color:red">Invalid state abbreviation</span>
     </div>
     <div>
-      <input size="2" />
+      <input size="2" oninput="check2(this, 'state abbreviation')" />
       <span style="color:red">Invalid state abbreviation</span>
     </div>
   </form>
@@ -113,7 +198,7 @@
   <p>Please enter an amount in US dollars</p>
   <form action="" id="form6">
     <div>
-      <input size="10" />
+      <input size="10" type="text" oninput="check(this, 'money amount')" pattern="^\d*\.\d{2}$" />
       <span style="color:red">Invalid money amount</span>
     </div>
     <div>

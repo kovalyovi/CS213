@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Form Validation | ILYA Kovalyov</title>
+  <meta name="description" content="JavaScript Form validation practice with ILYA Kovalyov">
+  <meta name="author" content="ILYA Kovalyov">
+  <link href="../lib/header.css" rel="stylesheet">
+  <link href="./assign10.css" rel="stylesheet">
+  <script src="../lib/jquery-3.4.1.min.js"></script>
+  <script src="./assign10.js"></script>
+</head>
+
+<body>
+  <header>
+    <div id="header"></div>
+  </header>
+
+  <main>
+    <div id="scroll-up">
+      <a href="#header"></a>
+    </div>
+
+    <div id="main-content">
+      <h1>Main Content</h1>
+      <form id="form" onsubmit="formSubmit(event)" autocomplete="off">
+        <input id="startCity" type="text" name="startCity" placeholder="Denver" autocomplete="off" required
+          pattern="[a-zA-Z]*">
+        <input id="startState" type="text" name="startState" placeholder="CO" minlength="2" maxlength="2"
+          oninput="capitalize(this)" autocomplete="off" required pattern="[a-zA-Z]{2}">
+        <input id="endCity" type="text" name="endCity" placeholder="Seattle" autocomplete="off" required
+          pattern="[a-zA-Z]*">
+        <input id="endState" type="text" name="endState" placeholder="WA" minlength="2" maxlength="2"
+          oninput="capitalize(this)" autocomplete="off" required pattern="[a-zA-Z]{2}">
+        <div>
+          <button class="calculate" type="submit">
+            Calculate
+          </button>
+          <button class="clear" type="reset">
+            Clear
+          </button>
+        </div>
+      </form>
+      <div id="output">
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div id="footer">
+      <div class="copyright">
+        <span>
+          Copyright © 2020 Rexburg USA, ILYA at BYU-Idaho. All rights reserved.
+        </span>
+      </div>
+      <div class="byui-link">
+        <a href="http://www.byui.edu/" target="_blank">BYUI Homepage</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
